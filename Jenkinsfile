@@ -19,6 +19,33 @@ pipeline {
                 }
             }
         }
+
+        stage ("Run Frontend") {
+            steps {
+                script {
+                    echo "excuting yarn...."
+                    nodejs('Node-10.17.0'){
+                        sh 'yarn install'
+                    }
+
+                }
+            }
+        }
+
+
+        stage ("Run Backend") {
+            steps {
+                script {
+                    echo "excuting gradle...."
+                    withGradle(){
+                        sh './gradlew -v'
+                    }
+
+                }
+            }
+        }
+
+
         stage('Build') {
             steps {
                 script{

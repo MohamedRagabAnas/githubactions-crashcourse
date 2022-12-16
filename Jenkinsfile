@@ -40,7 +40,7 @@ pipeline {
             steps {
                 script {
                     echo "excuting gradle...."
-                    sh './gradlew -v'
+                    sh 'java --version'
                     
 
                 }

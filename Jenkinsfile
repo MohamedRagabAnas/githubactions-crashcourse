@@ -41,7 +41,7 @@ pipeline {
                 script {
                     echo "excuting gradle...."
                     sh 'java --version'
-                    
+                    sh 'gradle --version'
 
                 }
             }

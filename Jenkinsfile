@@ -2,6 +2,9 @@ def gv
 
 pipeline {
     agent any
+    tools {
+        gradle 'Gradle-8.0'
+    }
     parameters {
         string (name: 'Version' , defaultValue: '2.3.0', description: 'Version to deploy on production')
         choice (name: 'Version_' , choices: ['1.1','1.2','1.3'], description: 'Version from choices')
@@ -37,9 +40,8 @@ pipeline {
             steps {
                 script {
                     echo "excuting gradle...."
-                    withGradle(){
-                        sh './gradlew -v'
-                    }
+                    sh './gradlew -v'
+                    
 
                 }
             }

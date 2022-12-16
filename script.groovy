@@ -13,3 +13,5 @@ def deployAPP()
     echo "Deploying with Version ${NEW_VERSION}..."
     echo "Deploying version ${params.Version}"
 }
+
+return this
